@@ -1,5 +1,5 @@
 # Ignore all
-*
+
 # Unignore all with extensions
 !*.*
 # Unignore all dirs
@@ -12,3 +12,4 @@ README.md
 .vscode/*
 *.plist
 *.dSYM
+*.json
