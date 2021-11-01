@@ -10,7 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int memcmp( const void * pointer1, const void * pointer2, size_t size )
+#include <stddef.h>
+int ft_memcmp( const void *ptr1, const void *ptr2, size_t size )
 {
-    
+    unsigned char   *d1;
+    unsigned char   *d2;
+
+    d1 = (unsigned char *) ptr1;
+    d2 = (unsigned char *) ptr2;
+    if (!size)
+        return (0);
+        while (--size && *d1 == *d2)
+        {
+            d1++;
+            d2++;
+        }
+    return ((int)(*d1 - *d2));
+}
+
+#include <stdio.h>
+#include <string.h>
+
+int main () {
+   char str1[15];
+   char str2[15];
+   int ret;
+
+   memcpy(str1, "abcdef", 6);
+   memcpy(str2, "ABCDEF", 6);
+
+   ret = ft_memcmp(str1, str2, 5);
+
+   if(ret > 0) {
+      printf("str2 is less than str1");
+   } else if(ret < 0) {
+      printf("str1 is less than str2");
+   } else {
+      printf("str1 is equal to str2");
+   }
+   
+   return(0);
 }
