@@ -11,24 +11,25 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-int ft_memcmp( const void *ptr1, const void *ptr2, size_t size )
-{
-    unsigned char   *d1;
-    unsigned char   *d2;
 
-    d1 = (unsigned char *) ptr1;
-    d2 = (unsigned char *) ptr2;
-    if (!size)
-        return (0);
-        while (--size && *d1 == *d2)
-        {
-            d1++;
-            d2++;
-        }
-    return ((int)(*d1 - *d2));
+int	ft_memcmp( const void *ptr1, const void *ptr2, size_t size )
+{
+	unsigned char	*d1;
+	unsigned char	*d2;
+
+	d1 = (unsigned char *) ptr1;
+	d2 = (unsigned char *) ptr2;
+	if (!size)
+		return (0);
+	while (--size && *d1 == *d2)
+	{
+		d1++;
+		d2++;
+	}
+	return ((int)(*d1 - *d2));
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 
 int main () {
@@ -50,4 +51,4 @@ int main () {
    }
    
    return(0);
-}
+} */
