@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:34:00 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/02 16:29:32 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:13:10 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 int		ft_memcmp(const void *ptr1, const void *ptr2, size_t size);
-void	*ft_memchr(const void *str, int c, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_isupper(int c);
 int		ft_isprint(int c);
 int		ft_isdigit(int c);
