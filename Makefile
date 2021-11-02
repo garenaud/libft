@@ -6,7 +6,7 @@
 #    By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 15:33:28 by grenaud-          #+#    #+#              #
-#    Updated: 2021/11/02 14:20:50 by grenaud-         ###   ########.fr        #
+#    Updated: 2021/11/02 16:59:19 by grenaud-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,6 @@ clean:
 fclean:	clean
 		@$(REMOVE) $(NAME)
 
-re:	fclean all
+re:		fclean all
 
 .PHONY: all clean fclean re

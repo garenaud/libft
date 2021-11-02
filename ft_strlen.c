@@ -6,13 +6,13 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 12:57:43 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/02 11:47:57 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:19:15 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlen(char const *s)
+size_t	ft_strlen(char const *s)
 {
 	unsigned int	size;
 

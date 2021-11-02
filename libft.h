@@ -6,15 +6,15 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:34:00 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/02 11:45:02 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/02 16:29:32 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define FT_INT_MIN -2147483648
-# define FT_INT_MAX 2147483647
+/* # define FT_INT_MIN -2147483648
+# define FT_INT_MAX 2147483647 */
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -25,7 +25,7 @@ int		ft_tolower(int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strncmp(char *s1, char *s2, size_t n);
-size_t	strlen(char const *s);
+size_t	ft_strlen(char const *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *str, int c);
