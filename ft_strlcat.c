@@ -6,9 +6,11 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:46:19 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/01 18:04:05 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:48:19 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

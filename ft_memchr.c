@@ -6,13 +6,11 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 11:45:43 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/10/28 13:10:49 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:18:38 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {

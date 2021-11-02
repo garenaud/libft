@@ -6,12 +6,11 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 18:47:25 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/10/26 20:16:56 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:48:54 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -39,21 +38,4 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	return (dst);
-}
-
-int main()
-{
-    char str1[] = "Geeks"; // Array of size 100
-    char str2[] = "Quiz"; // Array of size 5
- 
-    puts("str1 before memmove ");
-    puts(str1);
- 
-    /* Copies contents of str2 to sr1 */
-    ft_memmove(str1, str2, sizeof(str2));
- 
-    puts("\nstr1 after memmove ");
-    puts(str1);
- 
-    return 0;
 }

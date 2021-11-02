@@ -6,13 +6,11 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 17:18:06 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/10/26 17:59:48 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:19:47 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

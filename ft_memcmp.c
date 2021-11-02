@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_memcmp( const void *ptr1, const void *ptr2, size_t size )
+int	ft_memcmp(const void *ptr1, const void *ptr2, size_t size)
 {
 	unsigned char	*d1;
 	unsigned char	*d2;
