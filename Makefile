@@ -6,27 +6,27 @@
 #    By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 15:33:28 by grenaud-          #+#    #+#              #
-#    Updated: 2021/11/01 18:48:17 by grenaud-         ###   ########.fr        #
+#    Updated: 2021/11/02 14:20:50 by grenaud-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
+NAME = libft.a
 
-SRC		= $(shell find . -name "*.c")
+SRC = $(shell find . -name "*.c")
 
-OBJ		= $(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-COMPILE	= gcc $(CFLAGS) -c
+COMPILE = gcc $(CFLAGS) -c
 
-LIB		= ar rc $(NAME)
+LIB = ar rc $(NAME)
 
-RANLIB	= ranlib $(NAME)
+RANLIB = ranlib $(NAME)
 
-REMOVE	= rm -f
+REMOVE = rm -f
 
-all		= $(NAME)
+all = $(NAME)
 
 $(NAME):
 		@$(COMPILE) $(SRC)
@@ -36,7 +36,7 @@ $(NAME):
 clean:
 		@$(REMOVE) $(OBJ)
 
-fclean:
+fclean:	clean
 		@$(REMOVE) $(NAME)
 
 re:	fclean all
