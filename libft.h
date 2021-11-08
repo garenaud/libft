@@ -22,6 +22,7 @@
 
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int	    ft_isspace(int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strncmp(char *s1, char *s2, size_t n);
@@ -41,6 +42,6 @@ int		ft_isascii(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 void	ft_bzero(void *s, size_t n);
-int		ft_atoi(char *str);
+int     ft_atoi(const char *str);
 
 #endif
