@@ -26,6 +26,8 @@ int		ft_isspace(int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 size_t	ft_strlen(char const *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
