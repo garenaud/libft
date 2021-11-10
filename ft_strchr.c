@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 15:36:22 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/02 11:48:33 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:30:20 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	while (*str != '\0')
-		if (*str++ == (char)c)
-			return ((char *)str - 1);
-	if (c == '\0')
-		return ((char *)str);
+	char	find;
+	int		i;
+
+	find = (unsigned char)c;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == find)
+			return ((char *)str + i);
+		i++;
+	}
+	if (str[i] == find)
+		return ((char *)str + i);
 	return (0);
 }

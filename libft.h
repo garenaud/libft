@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:34:00 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/02 17:13:10 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/10 16:51:17 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 size_t	ft_strlen(char const *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);

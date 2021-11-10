@@ -1,41 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 16:31:29 by marvin            #+#    #+#             */
-/*   Updated: 2021/11/10 11:30:30 by grenaud-         ###   ########.fr       */
+/*   Created: 2021/11/10 16:23:03 by grenaud-          #+#    #+#             */
+/*   Updated: 2021/11/10 16:52:36 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+size_t	ft_getlen(int nb)
 {
-	char	*new;
-	size_t	lnew;
-	int		i;
-	int		j;
+	int	len;
 
-	lnew = (ft_strlen(s1) + 1) + (ft_strlen(s2) + 1);
-	new = (char *)malloc(sizeof(char) * (lnew));
-	if (new == NULL)
+	len = 0;
+	if (nb <= 0)
+		len++;
+	while (nb)
+	{
+		len++;
+		nb = nb / 10;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int		len;
+	char	*str;
+	long	nb;
+
+	len = ft_getlen(n);
+	nb = n;
+	str = ((char *)malloc(sizeof(char) * len + 1));
+	if (str == NULL)
 		return (NULL);
-	i = 0;
-	while (s1[i])
+	if (nb < 0)
 	{
-		new[i] = s1[i];
-		i++;
+		str[0] = '-';
+		nb = -nb;
 	}
-	j = 0;
-	while (s2[j])
+	if (nb == 0)
+		str[0] = '0';
+	str[len--] = '\0';
+	while (nb)
 	{
-		new[i] = s2[j];
-		i++;
-		j++;
+		str[len] = nb % 10 + '0';
+		len--;
+		nb = nb / 10;
 	}
-	new[i] = '\0';
-	return (new);
+	return (str);
 }
