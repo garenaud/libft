@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 14:49:48 by marvin            #+#    #+#             */
-/*   Updated: 2021/11/10 11:30:32 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/11 13:37:42 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str[i] = s[start + i];
 		i++;
 	}
-	str[i] = 0;
+	str[i] = '\0';
 	return (str);
 }

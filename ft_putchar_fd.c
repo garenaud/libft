@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 18:01:13 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/11 18:16:44 by grenaud-         ###   ########.fr       */
+/*   Created: 2021/11/11 10:08:42 by grenaud-          #+#    #+#             */
+/*   Updated: 2021/11/11 10:13:11 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char	*csrc;
-	unsigned char	*cdest;
-
-	csrc = (unsigned char *)src;
-	cdest = (unsigned char *)dst;
-	while (n > 0)
-	{
-		*cdest = *csrc;
-		cdest++;
-		csrc++;
-		n--;
-	}
-	return (dst);
+	write(fd, &c, 1);
 }
