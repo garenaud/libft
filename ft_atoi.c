@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:43:22 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/11 16:36:06 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/12 10:28:10 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int	num;
-	int	sign;
+	long	num;
+	int		sign;
 
 	num = 0;
 	sign = 1;

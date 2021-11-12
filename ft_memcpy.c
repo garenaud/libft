@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 18:01:13 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/11 18:16:44 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/12 09:52:34 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	csrc = (unsigned char *)src;
 	cdest = (unsigned char *)dst;
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	while (n > 0)
 	{
 		*cdest = *csrc;

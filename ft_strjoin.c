@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:31:29 by marvin            #+#    #+#             */
-/*   Updated: 2021/11/10 11:30:30 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/12 10:39:47 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
+	if (!s1)
+		return (0);
 	lnew = (ft_strlen(s1) + 1) + (ft_strlen(s2) + 1);
 	new = (char *)malloc(sizeof(char) * (lnew));
 	if (new == NULL)
