@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 14:43:22 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/17 14:09:46 by grenaud-         ###   ########.fr       */
+/*   Created: 2021/11/17 16:41:20 by grenaud-          #+#    #+#             */
+/*   Updated: 2021/11/17 17:00:25 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	return (c == '\f' || c == '\n' || c == '\r' \
-	|| c == '\t' || c == '\v' || c == ' ');
-}
+	t_list	*tmp;
 
-int	ft_atoi(const char *str)
-{
-	long	num;
-	int		sign;
-
-	num = 0;
-	sign = 1;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-		num = num * 10 + *str++ - '0';
-	return (num * sign);
+	if (!alst || !new)
+		return ;
+	if (*alst)
+	{
+		tmp = ft_lstlast(*alst);
+		tmp->next = new;
+	}
+	else
+		*alst = new;
+	new->next = NULL;
 }

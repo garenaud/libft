@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:51:02 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/12 11:45:29 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/17 13:56:21 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 	char	*str;
 
-	if (!s) if (s == 0)
+	if (!s)
 		return (NULL);
 	len = ft_strlen(s);
 	i = 0;

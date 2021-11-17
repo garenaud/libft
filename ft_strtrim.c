@@ -6,13 +6,13 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:57:13 by marvin            #+#    #+#             */
-/*   Updated: 2021/11/10 14:32:51 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/17 14:09:34 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_getstart(const char *s1, const char *set)
+static int	ft_getstart(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;
@@ -28,7 +28,7 @@ int	ft_getstart(const char *s1, const char *set)
 	return (i);
 }
 
-int	ft_getend(const char *s1, const char *set)
+static int	ft_getend(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;

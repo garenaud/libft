@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 11:19:49 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/03 15:33:46 by grenaud-         ###   ########.fr       */
+/*   Created: 2021/11/17 16:34:03 by grenaud-          #+#    #+#             */
+/*   Updated: 2021/11/17 16:39:29 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	t_list	*tmp_lst;
+
+	if (!lst)
+		return (NULL);
+	tmp_lst = lst;
+	while (tmp_lst->next)
+		tmp_lst = tmp_lst->next;
+	return (tmp_lst);
 }

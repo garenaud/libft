@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 14:43:22 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/17 14:09:46 by grenaud-         ###   ########.fr       */
+/*   Created: 2021/11/17 16:22:02 by grenaud-          #+#    #+#             */
+/*   Updated: 2021/11/17 16:33:18 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+int	ft_lstsize(t_list *lst)
 {
-	return (c == '\f' || c == '\n' || c == '\r' \
-	|| c == '\t' || c == '\v' || c == ' ');
-}
+	unsigned int	size;
+	t_list			*lst_tmp;
 
-int	ft_atoi(const char *str)
-{
-	long	num;
-	int		sign;
-
-	num = 0;
-	sign = 1;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-		num = num * 10 + *str++ - '0';
-	return (num * sign);
+	lst_tmp = lst;
+	size = 0;
+	while (lst_tmp)
+	{
+		size++;
+		lst_tmp = lst_tmp->next;
+	}
+	return (size);
 }

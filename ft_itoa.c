@@ -6,14 +6,13 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 16:23:03 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/12 10:18:17 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/17 14:10:09 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-size_t	ft_getlen(int nb)
+static size_t	ft_getlen(int nb)
 {
 	int	len;
 
