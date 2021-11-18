@@ -6,7 +6,7 @@
 #    By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 15:33:28 by grenaud-          #+#    #+#              #
-#    Updated: 2021/11/17 17:40:27 by grenaud-         ###   ########.fr        #
+#    Updated: 2021/11/18 14:40:31 by grenaud-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,8 @@ BONUS =	ft_lstnew.c\
 		ft_lstadd_back.c\
 		ft_lstdelone.c\
 		ft_lstclear.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
 
 OBJ = $(SRC:.c=.o)
 

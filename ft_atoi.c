@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:43:22 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/17 14:09:46 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/18 13:17:23 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,34 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while (ft_isspace(*str))
 		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (ft_isdigit(*str))
+	{
+		if ((num > LONG_MAX / 10) || (num == LONG_MAX / 10 && *str > '7'))
+		{
+			if (sign == 1)
+				return (-1);
+			return (0);
+		}
+		num = num * 10 + (*str++ - '0');
+	}
+	return ((int)(sign * num));
+}
+
+/* int	ft_atoi(const char *str)
+{
+	long	num;
+	int		sign;
+
+	num = 0;
+	sign = 1;
+	while (ft_isspace(*str))
+		str++;
 	if (*str == '-')
 		sign = -1;
 	if (*str == '-' || *str == '+')
@@ -34,4 +62,4 @@ int	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 		num = num * 10 + *str++ - '0';
 	return (num * sign);
-}
+} */
