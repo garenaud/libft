@@ -6,88 +6,70 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 14:50:25 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/17 14:11:44 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:39:19 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check_c(char str_check, char c)
-{
-	if (str_check == c)
-		return (1);
-	return (0);
-}
-
-static int	nb_blocks(char const *s, char c)
+static int	count_words(const char *str, char c)
 {
 	int	i;
-	int	nb;
+	int	trigger;
 
 	i = 0;
-	nb = 0;
-	while (s)
+	trigger = 0;
+	while (*str)
 	{
-		if ((i == 0 && !check_c(s[0], c))
-		|| (i > 0 && check_c(s[i - 1], c) && !check_c(s[i], c)))
-			nb++;
-		i++;
+		if (*str != c && trigger == 0)
+		{
+			trigger = 1;
+			i++;
+		}
+		else if (*str == c)
+			trigger = 0;
+		str++;
 	}
-	return (nb);
+	return (i);
 }
 
-static int	*size_blocks(char const *s, char c)
+static char	*word_dup(const char *str, int start, int finish)
 {
-	int	*tab;
-	int	i;
-	int	j;
+	char	*word;
+	int		i;
 
 	i = 0;
-	j = 0;
-	tab = malloc(sizeof(*tab) * (nb_blocks(s, c)));
-	if (tab == NULL)
-		return (NULL);
-	while (i < nb_blocks(s, c))
-		tab[i++] = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (!check_c(s[i], c))
-			tab[j]++;
-		else if (i > 0 && !check_c(s[i - 1], c))
-			j++;
-		i++;
-	}
-	return (tab);
+	word = malloc((finish - start + 1) * sizeof(char));
+	while (start < finish)
+		word[i++] = str[start++];
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		*tab;
-	char	**dest;
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**split;
 
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !split)
+		return (0);
 	i = 0;
 	j = 0;
-	tab = size_blocks(s, c);
-	dest = malloc(sizeof(dest) * (nb_blocks(s, c) + 1));
-	if (s == NULL && tab == NULL && dest == NULL)
-		return (NULL);
-	while (j < nb_blocks(s, c))
+	index = -1;
+	while (i <= ft_strlen(s))
 	{
-		k = 0;
-		while (check_c(s[i], c))
-			i++;
-		dest[j] = malloc(sizeof(*dest) * (tab[j] + 1));
-		if (dest[j] == NULL)
-			return (NULL);
-		while (k < tab[j])
-			dest[j][k++] = s[i++];
-		dest[j++][k] = '\0';
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		{
+			split[j++] = word_dup(s, index, i);
+			index = -1;
+		}
+		i++;
 	}
-	dest[j] = NULL;
-	free(tab);
-	return (dest);
+	split[j] = 0;
+	return (split);
 }

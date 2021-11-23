@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 10:35:49 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/18 14:54:41 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/23 17:41:39 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,55 +14,26 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*temp;
-	t_list	*new;
-	t_list	*prev;
-	t_list	*curr;
+	t_list	*tmp;
+	t_list	*ret;
 
-	curr = lst;
-	temp = NULL;
-	while (curr != NULL)
-	{
-		if (f != NULL || curr->content != NULL)
-			if ((curr->content = f(curr->content)) == NULL)
-				return (NULL);
-		if ((new = ft_lstnew(curr->content)) == NULL)
-			return (NULL);
-		ft_lstadd_back(&temp, new);
-		if (del != NULL)
-			(*del)(curr->content);
-		prev = curr;
-		curr = curr->next;
-		free(prev);
-	}
-	return (temp);
-}
-
-/* t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*new;
-	t_list	*head;
-	t_list	*tail;
-
-	if (!lst || !f || !del)
-		return (NULL);
-	head = NULL;
-	new = ft_lstnew(f(lst->content));
-	if (!new)
-		return (NULL);
-	ft_lstadd_back(&head, new);
-	tail = head;
+	if (!lst)
+		return (0);
+	ret = ft_lstnew((*f)(lst->content));
+	if (!ret)
+		return (0);
+	tmp = ret;
 	lst = lst->next;
 	while (lst)
 	{
-		if (!new)
+		tmp->next = ft_lstnew((*f)(lst->content));
+		if (!tmp->next)
 		{
-			ft_lstclear(&head, del);
-			return (NULL);
+			ft_lstclear(&ret, del);
+			return (0);
 		}
-		ft_lstadd_back(&tail, new);
-		tail = tail->next;
+		tmp = tmp->next;
 		lst = lst->next;
 	}
-	return (head);
-} */
+	return (ret);
+}

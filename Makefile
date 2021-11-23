@@ -6,11 +6,11 @@
 #    By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 15:33:28 by grenaud-          #+#    #+#              #
-#    Updated: 2021/11/18 14:40:31 by grenaud-         ###   ########.fr        #
+#    Updated: 2021/11/23 19:06:04 by grenaud-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME =	libft.a
 
 SRC =	ft_atoi.c\
 		ft_bzero.c\
@@ -45,6 +45,7 @@ SRC =	ft_atoi.c\
 		ft_substr.c\
 		ft_tolower.c\
 		ft_toupper.c\
+		ft_striteri.c\
 
 BONUS =	ft_lstnew.c\
 		ft_lstadd_front.c\
@@ -85,7 +86,8 @@ $(OBJ_B):
 		@$(SRC) $(BONUS)
 		@$(COMPILE) -c $(BONUS)
 
-bonus:	fclean @$(OBJ_B) $(OBJ)
+bonus:	
+		@$(OBJ_B) $(OBJ)
 		@$(COMPILE) $(NAME) $(OBJ_B) $(OBJ)
 
 clean:
