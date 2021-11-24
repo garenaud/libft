@@ -3,7 +3,7 @@
 # Unignore all with extensions
 !*.*
 # Unignore all dirs
-!*/
+*/
 
 README.md
 .DS_Store

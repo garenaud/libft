@@ -6,7 +6,7 @@
 /*   By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:41:20 by grenaud-          #+#    #+#             */
-/*   Updated: 2021/11/17 17:00:25 by grenaud-         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:32:49 by grenaud-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list	*tmp;
+	t_list	*elem;
 
-	if (!alst || !new)
-		return ;
-	if (*alst)
+	if (alst != NULL && *alst != NULL)
 	{
-		tmp = ft_lstlast(*alst);
-		tmp->next = new;
+		elem = *alst;
+		elem = ft_lstlast(*alst);
+		elem->next = new;
+		return ;
 	}
-	else
-		*alst = new;
-	new->next = NULL;
+	*alst = new;
 }

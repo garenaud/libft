@@ -6,11 +6,13 @@
 #    By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 15:33:28 by grenaud-          #+#    #+#              #
-#    Updated: 2021/11/23 19:06:04 by grenaud-         ###   ########.fr        #
+#    Updated: 2021/11/24 14:24:25 by grenaud-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libft.a
+
+HEADER =	libft.h
 
 SRC =	ft_atoi.c\
 		ft_bzero.c\
@@ -57,45 +59,30 @@ BONUS =	ft_lstnew.c\
 		ft_lstiter.c\
 		ft_lstmap.c\
 
-OBJ = $(SRC:.c=.o)
-
-OBJ_B = $(BONUS:.c=.o)
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-COMPILE = gcc $(CFLAGS) -c
+OBJS = ${SRC:.c=.o}
 
-LIB = ar rc $(NAME)
+OBJS_BONUS = ${BONUS:.c=.o}
 
-RANLIB = ranlib $(NAME)
+all: ${NAME}
 
-REMOVE = rm -f
+${NAME}:	${OBJS}
+			ar rc ${NAME} ${OBJS}
+			ranlib ${NAME}
 
-all: $(NAME)
-
-$(NAME):
-		@$(COMPILE) $(SRC) $(BONUS)
-		@$(LIB) $(OBJ) $(OBJ_B)
-		@$(RANLIB)
-
-$(OBJ):
-		@$(SRC)
-		@$(COMPILE) -c $(SRC)
-
-$(OBJ_B):
-		@$(SRC) $(BONUS)
-		@$(COMPILE) -c $(BONUS)
-
-bonus:	
-		@$(OBJ_B) $(OBJ)
-		@$(COMPILE) $(NAME) $(OBJ_B) $(OBJ)
+bonus:	${OBJS} ${OBJS_BONUS}
+		ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
+		ranlib ${NAME}
 
 clean:
-		@$(REMOVE) $(OBJ) $(OBJ_B)
+		rm -f ${OBJS} ${OBJS_BONUS}
 
 fclean:	clean
-		@$(REMOVE) $(NAME)
+		rm -f ${NAME}
 
-re:		fclean all
+re:	fclean ${NAME}
 
 .PHONY: all clean fclean re
